@@ -52,66 +52,8 @@ void printChoices()
     }
 }
 
-int main()
+void printResult(vi foundchars, string choice)
 {
-
-    vector<string> districts{"NYABIHU", "DISTRICTS", "GAKENKE", "MUSANZE"};
-    vector<string> plants{"AVOKADO", "MANGOES", "COCOMBLE", "BANANA"};
-    vector<string> Animals{"HEN", "CHICKEN", "SHEEP", "COW"};
-    vector<string> Peaples{"VALENS", "MURANGWA", "PACIFIQUE", "VAINQUER", "BANJO"};
-    string choice = "GAKENKE";
-    vi foundchars;
-    int category;
-    string main;
-    char input;
-    int guesTimes = choice.size();
-    int i = 0;
-
-    printChoices();
-    cin >> category;
-    cout << category;
-
-    switch (category)
-    {
-    case 1:
-        // choice = districts[1 + rand() % districts.size()];
-        choice = districts[0 + rand() % districts.size()];
-        break;
-    case 2:
-        choice = plants[0 + rand() % plants.size()];
-        break;
-    case 3:
-        choice = Animals[0 + rand() % Animals.size()];
-        break;
-    case 4:
-        choice = Peaples[0 + rand() % Peaples.size()];
-        break;
-
-    default:
-        cout << "please choose one choice " << endl;
-        printChoices();
-        break;
-    }
-    cout << " gues the world " << endl;
-    while (i < guesTimes)
-    {
-        cin >> input;
-        foundchars.push_back(input);
-        main[i] = input;
-        for (int j = 0; j < foundchars.size(); j++)
-        {
-            if (seach(choice, foundchars[j]))
-            {
-                cout << foundchars[j];
-            }
-            else
-            {
-                cout << " _";
-            }
-        }
-        i++;
-    }
-
     if (checkEquality(foundchars, choice) == choice.size())
     {
         cout << "\nconglatulations,  You win!!!!" << endl;
@@ -136,4 +78,76 @@ int main()
             i++;
         }
     }
+}
+int main()
+{
+
+    vector<string> districts{"NYABIHU", "DISTRICTS", "GAKENKE", "MUSANZE"};
+    vector<string> plants{"AVOKADO", "MANGOES", "COCOMBLE", "BANANA"};
+    vector<string> Animals{"HEN", "CHICKEN", "SHEEP", "COW"};
+    vector<string> Peaples{"VALENS", "MURANGWA", "PACIFIQUE", "VAINQUER", "BANJO"};
+    string choice = "GAKENKE";
+    vi foundchars;
+    int category;
+    string main;
+    char input;
+    int guesTimes = choice.size();
+    int i = 0;
+
+    printChoices();
+
+    cout << " choose category you want to use in this game : " << endl;
+    cin >> category;
+
+    cout << " gues the world " << endl;
+    while (i < guesTimes)
+    {
+        switch (category)
+        {
+        case 1:
+            // choice = districts[1 + rand() % districts.size()];
+            choice = districts[0 + rand() % districts.size()];
+            break;
+        case 2:
+            choice = plants[0 + rand() % plants.size()];
+            break;
+        case 3:
+            choice = Animals[0 + rand() % Animals.size()];
+            break;
+        case 4:
+            choice = Peaples[0 + rand() % Peaples.size()];
+            break;
+
+        default:
+            cout << "please choose one choice " << endl;
+            printChoices();
+            break;
+        }
+        cin >> input;
+        foundchars.push_back(input);
+        main[i] = input;
+        for (int j = 0; j < foundchars.size(); j++)
+        {
+
+            if (choice[j] == foundchars[j])
+            {
+                cout << choice[j];
+            }
+            else
+            {
+                cout << "_";
+            }
+            // if (seach(choice, foundchars[j]))
+            // {
+            //     cout << foundchars[j];
+            // }
+            // else
+            // {
+            //     cout << " _";
+            // }
+        }
+        i++;
+    }
+
+    printResult(foundchars, choice);
 }
