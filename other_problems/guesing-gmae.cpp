@@ -96,7 +96,7 @@ void checkExistence(string name, string foundchars)
 
             if (name[j] == foundchars[j])
             {
-                 cout << "_";
+                cout << "_";
             }
             else
             {
