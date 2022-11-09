@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 bool search(int arr[6], int key, int len)
 {
     int res = false;
@@ -26,7 +25,6 @@ bool search(int arr[6], int key, int len)
             }
         }
     }
-
     return res;
 }
 
