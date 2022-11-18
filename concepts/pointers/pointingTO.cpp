@@ -55,6 +55,9 @@ void sort(int arr[], int n)
 int main()
 {
     int numbers[4] = {1, 2, 3, 4};
-    sort(numbers, 4);
+    // sort(numbers, 4);
+
+    // int *ptr = 5;
+    // *ptr = 7;
     return 2;
 }

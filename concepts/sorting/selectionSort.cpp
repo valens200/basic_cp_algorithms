@@ -9,28 +9,29 @@ void printArr(int arr[])
     }
 }
 
-void sort(int arr[])
+void sort(int arr[], int len)
 {
-  int temp;
-    for (int i = 0; i < 5  ; i++)
+    int temp;
+    for (int i = 0; i < len - 1; i++)
     {
-        int middle = i;
-        for (int j = i + 1; j < 5; j++)
+        for (int j = i + 1; j < len; j++)
         {
-            if (arr[j] > arr[middle])
+            int targetIndex = i;
+            if (arr[j] < arr[targetIndex])
             {
-                middle = j;
+                targetIndex = j;
+            }
+            temp = arr[i];
+            arr[i] = arr[targetIndex];
+            arr[targetIndex] = temp;
         }
-                temp = arr[j];
-                arr[j] = arr[middle];
-                arr[middle] = temp;
     }
-}
-        printArr(arr);
+    printArr(arr);
 }
 
-int  main(){
-    int numbers[] = {34, 23, 45, 5657, 78};
-    sort(numbers);
+int main()
+{
+    int numbers[] = {5,2,4,7,8,1};
+    sort(numbers, 6);
     return 0;
 }
