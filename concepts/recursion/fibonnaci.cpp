@@ -48,9 +48,9 @@ int main()
 {
 
     int numbers[4] = {2, 3, 4, 5};
-    int n = 12345;
-    // cout << fibonnaci(n);
+    int n = 8;
+    cout << fibonnaci(n);
     // cout << getSum(n);
-    cout << sumArray(numbers, 4);
+    // cout << sumArray(numbers, 4);
     return 0;
 }

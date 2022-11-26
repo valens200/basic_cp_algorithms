@@ -28,14 +28,10 @@ void sort(int arr[], int n)
 
     while (it < n - 1)
     {
-        cout << " " << endl;
-        cout << " iteration " << it << endl;
-        cout << " sorted array : " << endl;
+       
         int check = 0;
         for (j = 0; j < n - 1; j++)
         {
-            printArr(arr, n);
-            cout << " j : " << j << endl;
             if (arr[j] > arr[j + 1])
             {
                 temp = arr[j];
@@ -51,10 +47,11 @@ void sort(int arr[], int n)
 
         it++;
     }
+            printArr(arr, n);
 }
 int main()
 {
-    int numbers[4] = {1, 2, 3, 4};
+    int numbers[4] = {1, 0, 3, 4};
     sort(numbers, 4);
     return 2;
 }

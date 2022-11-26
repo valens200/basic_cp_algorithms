@@ -30,7 +30,7 @@ int  main(){
     int num[] = {3,4,5};
     num[0] = num[1];;
 
-    vector<int> numbers = {34,34,19,5452,3,23};
+    vector<int> numbers = {34,0,19,5452,3,23};
     sort(numbers);
     return 0;
 
