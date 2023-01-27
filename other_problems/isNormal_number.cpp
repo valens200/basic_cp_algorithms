@@ -2,36 +2,32 @@
 using namespace std;
 typedef vector<int> vi;
 
-int  isNormal(int number)
+int isNormal(int number)
 {
-    vi factors;
-    int i = 0;
-    int result = 1;
-    while (i <= number)
+    int checkNormal = 1;
+    for (int i = 1; i <= number; i++)
     {
-        if (number % i == 0)
+        if ((number % i) == 0)
         {
-            cout << i <<endl;
-            factors.push_back(i);
-        }
-        i++;
-    }
-    while(i < number){
-        if(factors[i] % 2 != 0){
-            result =  0;
-            cout << factors[i];
-        }
-          cout << factors[i];
-        i++;
-    }
 
-    return result;
+            if (i % 2 == 0)
+            {
+                checkNormal = 1;
+            }
+            else
+            {
+                checkNormal = 0;
+                break;
+            }
+        }
+    }
+    return checkNormal;
 }
 
 int main()
 {
 
-    int number = 6;
+    int number = 2;
     cout << isNormal(number);
 
     return 0;

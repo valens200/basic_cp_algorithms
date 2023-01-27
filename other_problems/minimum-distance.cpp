@@ -2,65 +2,67 @@
 using namespace std;
 typedef vector<int> vi;
 
-void printArr(vi arr)
+int minDistance(int number)
 {
-    int min = arr[1] - arr[0];
-    cout << " min distance " << min << endl;
-}
-void sort(vi arr)
-{
-    int i;
-    int len = arr.size();
-    for (i = 1; i < len; i++)
+    int factors[50] = {};
+    int count = 0;
+    for (int i = 1; i <= number; i++)
     {
-        int current_val = arr[i];
-        int position = i;
-        while (position > 0 && arr[position - 1] > current_val)
+        if ((number % i) == 0)
         {
-            arr[position] = arr[position - 1];
-            position--;
+            factors[count] = i;
+            count++;
         }
-        arr[position] = current_val;
     }
-
-    printArr(arr);
+    int mdistance = factors[count - 1] - factors[0];
+    for (int j = 0; j < count - 1; j++)
+    {
+        int d = 0;
+        for (int p = j + 1; p < count; p++)
+        {
+            d = factors[p] - factors[j];
+            if (d < mdistance)
+            {
+                mdistance = d;
+            }
+        }
+    }
 }
 
 
 
 
-int isDigit(int arr[2], int number){
-    int sum = 0;
-    int i = 0;
-    while(i < 5){
-        sum += arr[i];
-        i++;
+
+
+
+
+
+
+int  min(int arr, int len){
+
+    for(int i = 1; i < len ; i++){
+        int position = i;
+        int currentValue = arr[i];
+
+        while(position >= 0 && arr[position -1] > currentValue){
+            arr[position] = arr[position - 1];
+            position--; 
+        }
+        arr[position] = currentValue;
     }
-    if(sum <= number){
-        return 1;
-    }else{
-        return 0;
-    }
+    return  arr[1] - arr[0];
 }
 
 int main()
 {
-    vi factors;
-    int number, i, j;
-    cin >> number;
-    int numbers[2] = {3,4};
-
-    // for (i = 1; i <= number; i++)
-    // {
-    //     if (number % i == 0)
-    //     {
-    //         factors.push_back(i);
-    //         cout << factors[i];
-    //     }
-    // }
-
-    // sort(factors);
-    cout << isDigit(numbers, number);
+    int number = 8;
+    int vector<int> factors;
+    for(int i = 1; i <= number ; i++){
+        if(number % i == 0){
+            factors.push_back(i);
+        }
+    }
+    cout << min(factors, factors.size());
 
     return 0;
 }

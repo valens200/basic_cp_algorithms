@@ -44,8 +44,8 @@ int getNthPrime(int number)
 int main()
 {
 
-    // int n;
-    // cin >> n;
+    int n;
+    cin >> n;
     cout << " index :" << getNthPrime(1) << endl;
 
     return 0;

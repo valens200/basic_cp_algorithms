@@ -5,16 +5,13 @@ using namespace std;
 vector<char> vi;
 vector<char> removeCharacter(char *arr, char target, int n)
 {
-    if (n == 0)
-    {
-        return  vi;
-    }
-    if (arr[0] != target)
-    {
-        vi.push_back(arr[0]);       
-    }
-
-     return removeCharacter(arr + 1, target, n - 1);
+    if(n == 0){
+     return vi;
+   }
+   if(arr[0] != target){
+    vi.push_back(arr[0]);
+   }
+   return removeCharacter(arr+1, target, n-1);
 }
 int main()
 {
