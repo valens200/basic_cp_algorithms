@@ -9,7 +9,6 @@ void mergeArrays(int x[], int y[], int a[], int s, int e)
     int k = s;
     while (i <= mid && j <= e)
     {
-        // We need to do the  Comparison
         if (x[i] < y[j])
         {
             a[k] = x[i];
