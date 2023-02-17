@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+@author valens
+*/
+
 void mergeArrays(int x[], int y[], int a[], int s, int e)
 {
     int mid = (s + e) / 2;
@@ -38,23 +42,23 @@ void mergeArrays(int x[], int y[], int a[], int s, int e)
 
 void mergeSort(int a[], int s, int e)
 {
-    if (s >= e)
+
+    if (s < e)
     {
-        return;
+        int mid = (s + e) / 2;
+        int x[100], y[100];
+        for (int i = s; i <= mid; i++)
+        {
+            x[i] = a[i];
+        }
+        for (int i = mid + 1; i <= e; i++)
+        {
+            y[i] = a[i];
+        }
+        mergeSort(x, s, mid);
+        mergeSort(y, mid + 1, e);
+        mergeArrays(x, y, a, s, e);
     }
-    int mid = (s + e) / 2;
-    int x[100], y[100];
-    for (int i = s; i <= mid; i++)
-    {
-        x[i] = a[i];
-    }
-    for (int i = mid + 1; i <= e; i++)
-    {
-        y[i] = a[i];
-    }
-    mergeSort(x, s, mid);
-    mergeSort(y, mid + 1, e);
-    mergeArrays(x, y, a, s, e);
 }
 
 int main()

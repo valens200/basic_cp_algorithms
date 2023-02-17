@@ -19,16 +19,20 @@ struct Student
 } s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11;
 
 Student students[] = {s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11};
-Student retrievedStudent;
 Student retrievedStudents[] = {s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11};
+
 void mergeSort(Student a[], int start, int end)
 {
     if (start < end)
     {
         int mid = (start + end) / 2;
+        //calling it self and recording the execution signature untill the condtion is violated
         mergeSort(a, start, mid);
         mergeSort(a, mid + 1, end);
-        int i = start, j = mid + 1, k = 0;
+        int i = start;
+        int j = mid + 1;
+        int k = 0;
+
         Student temp[end - start + 1];
         while (i <= mid && j <= end)
         {
@@ -89,7 +93,7 @@ void readStudents(int length)
         }
     }
     myFile.close();
-    mergeSort(retrievedStudents, 0, length-1);
+    mergeSort(retrievedStudents, 0, length - 1);
     int sum = 0;
     for (int k = 0; k < length; k++)
     {

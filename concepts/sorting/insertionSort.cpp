@@ -2,7 +2,7 @@
 using namespace std;
 typedef vector<int> vi;
 /*
-@author avalens
+@author valens
 */
 
 void printArr(vi arr) {
@@ -20,7 +20,7 @@ void  sort(vi arr){
             position--;           
         }
        arr[position] = curr_val;
-        
+         
     }
     printArr(arr);
 }

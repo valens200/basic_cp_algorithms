@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+@author valens
+*/
+
 void selctionSort(int arr[], int len)
 {
     int i = 0;

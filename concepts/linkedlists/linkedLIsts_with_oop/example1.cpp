@@ -62,14 +62,12 @@ int main()
     Node n1(5);
     Node n2 = Node(7);
 
-    // Node *head = 
     n2.next = first;
     n1.next = &n2;
     n2.next = NULL;
 
     cout << "the length is : " << getLength(first);
     printNode(first);
-    // //printing ne linked list
     displayList(&n1);
 
     return 0;

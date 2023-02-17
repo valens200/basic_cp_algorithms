@@ -15,16 +15,22 @@ Node *insert(Node *head, int pos, int data)
 {
     int i = 0;
     Node *newNode = new Node(data);
+    if(pos <= 0){
+        newNode->next = head;
+        head = newNode;
+
+    }
+
+    // cout << newNode->data;
+
     while (i <= pos)
     {
         head = head->next;
-
         if (i == pos)
         {
             newNode->next = head;
             head = newNode;
         }
-
         i++;
     }
     return head;
@@ -41,16 +47,16 @@ int main()
 {
     Node *node1 = new Node(5);
     Node *node2 = new Node(4);
-    Node *node3 = new Node(55);
+    Node *node3 = new Node(5);
     Node *node4 = new Node(10);
-    Node *node5 = new Node(0);
+    Node *node5 = new Node(90);
     Node *node6 = new Node(6);
     node1->next = node2;
-    node2->next =node3;
+    node2->next = node3;
     node3->next = node4;
     node4->next = node5;
     node5->next = node6;
-    Node *node = insert(node1, 3, 100);
+    Node *node = insert(node1, 3, 300);
     print(node1);
 
     return 0;

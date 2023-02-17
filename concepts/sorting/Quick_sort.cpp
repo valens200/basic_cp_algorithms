@@ -1,40 +1,50 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void swap(int* n, int* m)
+/*
+@author valens
+*/
+
+void swap(int *a, int *b)
 {
-    int temp;
-    temp = *n;
-    *n = *m;
-    *m = temp;
+    int t = *a;
+    *a = *b;
+    *b = t;
 }
-int partion(int arr[], int low, int high)
+
+int partition(int arr[], int low, int high)
 {
-    int i = (low - 1);
     int pivot = arr[high];
-    for (int j = low; j < high; j++)
+    int i = low - 1;
+
+    for (int j = low; j <= high - 1; j++)
     {
         if (arr[j] < pivot)
         {
-            swap(arr[i], arr[j]);
             i++;
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
         }
     }
-    swap(arr[i + 1], arr[pivot]);
+    int temp = arr[i + 1];
+    arr[i + 1] = arr[high];
+    arr[high] = temp;
     return (i + 1);
 }
 
-int quickSort(int arr[], int low, int high)
+
+void quickSort(int arr[], int low, int high)
 {
     int mid;
     if (low < high)
     {
-        mid = partion(arr, low, high);
-        // cout << " mid " << mid <<endl;
+        mid = partition(arr, low, high);
         quickSort(arr, low, mid - 1);
         quickSort(arr, mid + 1, high);
     }
 }
+
 int main()
 {
     int numbers[5] = {2, 3, 4, 1, 0};
