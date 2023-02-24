@@ -46,8 +46,6 @@ void dislay(Node *node)
     }
 }
 
-
-
 // function checkPassword(username, password)
 // {
 //   if( username === 'admin' && password === 'strongPassword098765' )
@@ -82,10 +80,35 @@ Node *deleteLastNode(Node *head)
     return head;
 }
 
+Node *deleteThirdNode(Node *head, int index)
+{
+
+    Node *temporary = head;
+
+    int counter = 0;
+    if (head == NULL || head->next == NULL)
+    {
+        delete head;
+        return NULL;
+    }
+    while (head != NULL)
+    {
+        if (counter == index - 1)
+        {
+            Node *temp = head->next;
+            head->next = head->next->next;
+            delete temp;
+        }
+        head = head->next;
+        counter++;
+    }
+    return temporary;
+}
+
 int main()
 {
 
-    Node *node1 = new Node(4);
+    Node *node1 = new Node(1);
     Node *node2 = new Node(6);
     Node *node3 = new Node(8);
     Node *node4 = new Node(10);
@@ -94,11 +117,11 @@ int main()
     node2->next = node3;
     node3->next = node4;
     node4->next = node5;
-
     cout << "Found at index : " << search(node1, 8) << endl;
     // Node *updatedList = deleteFirstNode(node1);
-    Node *updated = deleteLastNode(node1);
-    dislay(updated);
+    // Node *updated = deleteLastNode(node1);
+    Node *newUpdated = deleteThirdNode(node1, 3);
+    dislay(newUpdated);
 
     return 9;
 }
