@@ -21,8 +21,42 @@ struct Student
     }
 } s1, s2, s3, s4, s5;
 
-Student students[] = {};
+struct Student students[] = {s1, s2, s3, s4, s5};
 
+void readStudents()
+{
+    ifstream file("students.txt");
+    string line;
+    while (!file.eof())
+    {
+        getline(file, line);
+        cout << line << "\n";
+    }
+}
+
+void storeStudents()
+{
+
+    ofstream file("students.txt");
+
+    int size = sizeof(students) / sizeof(students[0]);
+
+    cout << size;
+
+    if (!file.is_open())
+    {
+        cout << "Failed to open the file\n";
+        return;
+    }
+
+    int i;
+    for (i = 0; i < size; i++)
+    {
+        file << "\nFirstName :" + students[i].firstName + ", LastName :" + students[i].lastName + ", Email :" + students[i].email + ", Class :" + students[i].aClass;
+    }
+    if (i == size)
+        file.close();
+}
 void getInputs()
 {
 
@@ -43,52 +77,13 @@ void getInputs()
         getline(cin, student.aClass);
         students[i] = student;
     }
-}
-
-void storeStudents(Student students[], int size)
-{
-
-    ofstream file("students.txt");
-
-    if (!file.is_open())
-    {
-        cout << "Failed to open the file\n";
-        return;
-    }
-
-    int i;
-    for (i = 0; i < size; i++)
-    {
-        // file << " Student Number:" + students[i].rollNumber + " :\n";
-        file << "FirstName :" + students[i].firstName + ", LastName :" + students[i].lastName + ", Email :" + students[i].email + ", Class :" + students[i].aClass;
-    }
-    if (i == size)
-        file.close();
-}
-
-void readStudents()
-{
-
-    ifstream file('students.txt');
-
-    if (file.fail())
-    {
-        cout << "The file could not be opened.";
-        return 1;
-    }
-
-    while (!file.eof())
-    {
-        string line;
-        
-    }
+    storeStudents();
+    readStudents();
 }
 
 int main()
 {
 
     getInputs();
-    storeStudents(students, 1);
-
     return 0;
 }
