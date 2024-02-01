@@ -3,11 +3,11 @@ using namespace std;
 typedef vector<int> vi;
 typedef vector<vector<int>> nvi;
 
-
 int getNumber(int arr[], int n)
 {
-        vector<int> subset;
-        nvi numbers;
+    vector<int> subset;
+    
+    nvi numbers;
 
     for (int b = 0; b < (1 << n); b++)
     {
@@ -18,15 +18,15 @@ int getNumber(int arr[], int n)
         }
     }
 
-    for(int i = 0; i < subset.size(); i++){
+    for (int i = 0; i < subset.size(); i++)
+    {
         cout << subset[i] << endl;
     }
 }
 int main()
 {
-    int arr[4] = {2,3,4,5};
+    int arr[4] = {2, 3, 4, 5};
     getNumber(arr, 4);
-
 
     return 0;
 }

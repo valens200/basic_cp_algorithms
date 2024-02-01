@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 void printArr(int arr[])
@@ -31,7 +32,7 @@ void sort(int arr[], int len)
 
 int main()
 {
-    int numbers[] = {5,2,4,7,8,1};
+    int numbers[] = {5, 2, 4, 7, 8, 1};
     sort(numbers, 6);
     return 0;
 }

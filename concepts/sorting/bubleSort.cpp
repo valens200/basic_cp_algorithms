@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+
 using namespace std;
 
 void print(int arr[], int len)
@@ -34,7 +36,7 @@ void bubleSort(int arr[], int length)
 
 int main()
 {
-    int arr[] = {34, 04523, 2, 30 };
+    int arr[] = {34, 04523, 2, 30};
     bubleSort(arr, 200);
 
     return 0;
