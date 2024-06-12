@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
 using namespace std;
 
 bool isPrime(int number)
@@ -12,13 +12,13 @@ bool isPrime(int number)
     for (int i = 2; i < number; i++)
     {
         if (number % i == 0)
-        { 
+        {
             res = false;
             break;
         }
         else
         {
-            res =  true;
+            res = true;
             break;
         }
     }
@@ -35,8 +35,10 @@ int getNthPrime(int number)
         {
             return i;
             break;
-        }else{
-            cout << " npot prime num " <<endl;
+        }
+        else
+        {
+            cout << " npot prime num " << endl;
         }
     }
     return index;

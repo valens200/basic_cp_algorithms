@@ -34,8 +34,5 @@ int main()
     int numbers[5] = {2, 3, 4, 5, 6};
     // insert(numbers, 10, 3, 5);
     deleteEleme(numbers, 2, 5);
-
-    // 3
-
     return 0;
 }

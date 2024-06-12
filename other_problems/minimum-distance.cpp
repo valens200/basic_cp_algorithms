@@ -1,8 +1,8 @@
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
 using namespace std;
 typedef vector<int> vi;
 
-int minDistance(int number)
+void minDistance(int number)
 {
     int factors[50] = {};
     int count = 0;
@@ -29,36 +29,32 @@ int minDistance(int number)
     }
 }
 
+int min(vector<int> arr, int len)
+{
 
-
-
-
-
-
-
-
-
-int  min(int arr, int len){
-
-    for(int i = 1; i < len ; i++){
+    for (int i = 1; i < len; i++)
+    {
         int position = i;
         int currentValue = arr[i];
 
-        while(position >= 0 && arr[position -1] > currentValue){
+        while (position >= 0 && arr[position - 1] > currentValue)
+        {
             arr[position] = arr[position - 1];
-            position--; 
+            position--;
         }
         arr[position] = currentValue;
     }
-    return  arr[1] - arr[0];
+    return arr[1] - arr[0];
 }
 
 int main()
 {
     int number = 8;
-    int vector<int> factors;
-    for(int i = 1; i <= number ; i++){
-        if(number % i == 0){
+    vector<int> factors;
+    for (int i = 1; i <= number; i++)
+    {
+        if (number % i == 0)
+        {
             factors.push_back(i);
         }
     }

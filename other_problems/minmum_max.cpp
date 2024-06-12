@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
 using namespace std;
 
 int getmin(int arr[10])
@@ -6,7 +6,8 @@ int getmin(int arr[10])
     int min = arr[0];
     for (int i = 0; i < 10; i++)
     {
-        if(arr[i] < min){
+        if (arr[i] < min)
+        {
             min = arr[i];
         }
     }

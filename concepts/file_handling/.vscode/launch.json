@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/apple/projects/practice/algorithms/leetcode/concepts/file_handling",
+      "program": "/Users/apple/projects/practice/algorithms/leetcode/concepts/file_handling/build/Debug/outDebug"
+    }
+  ]
+}
